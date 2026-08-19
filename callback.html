@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Life Cards — Returning to the app</title>
+<link rel="stylesheet" href="style.css"></head><body>
+
+<h1>Returning to Life Cards…</h1>
+<p class="meta">If the app does not open automatically, tap the button below.</p>
+<p><a id="open" href="#">Open Life Cards</a></p>
+
+<script>
+  // Enable Banking only accepts http/https redirect URLs, so the bank returns
+  // the user here and this page forwards the authorisation code into the app
+  // via its custom scheme.
+  var target = "lifecards://auth/callback" + window.location.search + window.location.hash;
+  document.getElementById("open").href = target;
+  window.location.replace(target);
+</script>
+
+<footer><a href="./">Life Cards</a> · <a href="privacy.html">Privacy Notice</a> · <a href="terms.html">Terms of Use</a></footer>
+</body></html>
